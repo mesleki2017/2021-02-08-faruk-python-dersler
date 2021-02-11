@@ -1,4 +1,4 @@
-import excel_veri_yazma as yaz
+import excel_liste_yazma as yaz
 
 
 liste1 = [8, 944, 6, 7, 9, 2]
