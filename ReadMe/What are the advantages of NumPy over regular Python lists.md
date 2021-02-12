@@ -9,3 +9,5 @@ The difference is mostly due to "indirectness" -- a Python list is an array of p
 [stackoverflow](https://stackoverflow.com/questions/993984/what-are-the-advantages-of-numpy-over-regular-python-lists)
 
 [python array vs numpy array](https://learnpython.com/blog/python-array-vs-list/)
+
+[stackoverflow](https://stackoverflow.com/questions/45285743/when-to-use-pandas-series-numpy-ndarrays-or-simply-python-dictionaries)
