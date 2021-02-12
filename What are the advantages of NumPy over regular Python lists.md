@@ -1,4 +1,4 @@
-#What are the advantages of NumPy over regular Python lists?
+# What are the advantages of NumPy over regular Python lists?
 
 NumPy's arrays are more compact than Python lists -- a list of lists as you describe, in Python, would take at least 20 MB or so, while a NumPy 3D array with single-precision floats in the cells would fit in 4 MB. Access in reading and writing items is also faster with NumPy.
 
