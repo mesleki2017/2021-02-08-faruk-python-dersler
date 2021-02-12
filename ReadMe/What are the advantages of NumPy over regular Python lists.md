@@ -10,4 +10,4 @@ The difference is mostly due to "indirectness" -- a Python list is an array of p
 
 [python array vs numpy array](https://learnpython.com/blog/python-array-vs-list/)
 
-[stackoverflow](https://stackoverflow.com/questions/45285743/when-to-use-pandas-series-numpy-ndarrays-or-simply-python-dictionaries)
+[When to use pandas series, numpy ndarrays or simply python dictionaries](https://stackoverflow.com/questions/45285743/when-to-use-pandas-series-numpy-ndarrays-or-simply-python-dictionaries)
