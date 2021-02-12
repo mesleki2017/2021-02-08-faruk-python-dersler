@@ -1,20 +1,53 @@
+import pandas as pd
+from sklearn.tree import DecisionTreeClassifier
+from sklearn import preprocessing
+from sklearn import utils
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+import joblib
 import numpy as np
 
-list1 = [1, 2, 3, 4, 5, 6]
-list2 = [10, 9, 8, 7, 6, 5]
 
-try:
-    print(list1*list2)
-except:
-    print("hata olustu")
-    print("python listeleri direkt olarak carpilamaz")
-    print("fakat bu listeleri numpt array cevirip bu carpmayi yapabiliriz")
+time = np.arange(8, 15, 0.01)
+dict = {"zaman": time}
+data_frame1 = pd.DataFrame(dict)
 
-print("----------------------------------------------------------------")
-# Convert list1 into a NumPy array
-a1 = np.array(list1)
+data = pd.read_csv("file2.csv")
 
-# Convert list2 into a NumPy array
-a2 = np.array(list2)
+xxx = data.drop(columns="genlik")
+yyy = data["genlik"]
 
-print(a1*a2)
+# cikisi yani y i, sklearn in istediği formata cevirmek icin
+# labelencoder kullaniliyor.
+lab_enc = preprocessing.LabelEncoder()
+y_encoded = lab_enc.fit_transform(yyy)
+
+# bu labelencode uda daha sonra kullanabilmek icin
+# yani egittigimiz modelden data aldigimizda decode edebilmek icin
+# kayit etmemiz gerekiyor.
+np.save('classes.npy', lab_enc.classes_)
+
+# datamizi train ve test olaraj 2 ye boluyoruz 0.8 ve 0.2 oranla
+x_train, x_test, y_encoded_train, y_encoded_test = train_test_split(
+    xxx, y_encoded, test_size=0.2)
+
+# model objesini olusturup fit ile egitiyoruz
+model = DecisionTreeClassifier()
+model.fit(x_train, y_encoded_train)
+
+# modeli egittikten sonra joblib dosyasi olarak kayit ettik
+# daha sonra bu modeli kullanabilmek icin. yani her seferinde
+# modeli egitmemize gerek yok
+joblib.dump(model, "sinus_egri_makina_ogrenmesi_1.joblib")
+
+
+#prediction = model.predict(data_frame1)
+prediction = model.predict(data_frame1)
+# -----------------------------------------
+# print(prediction)
+# score = accuracy_score(y_encoded_test, prediction)
+# print(score)
+# -----------------------------------------
+
+# tahminleri inverse.transforme ile decode ediyoruz
+print(lab_enc.inverse_transform((prediction)))
