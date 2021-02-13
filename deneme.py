@@ -1,19 +1,20 @@
 import pandas as pd
-from datetime import datetime
-import csv
-import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
 
+# Create a DataFrame from List of Dicts
+data = [{'elma': 1, 'armut': 2}, {'karpuz': 5,
+                                  'armut': 10, "elma": 20}, {"aaa": 11, "bbb": 22}]
+print(type(data))
+print(type(data[0]))
 
-df = pd.read_csv('altin_fiyat.csv')
+print("---------------------------------------------------")
+df = pd.DataFrame(data)
+print(df)
+print("---------------------------------------------------")
 
+df.fillna(-9999, inplace=True)
+print(df)
+print("---------------------------------------------------")
 
-x = df['Date']
-y = df["USD (AM)"]
-
-# # plot
-plt.plot(x, y)
-# # beautify the x-labels
-plt.gcf().autofmt_xdate()
-
-plt.show()
+df["label"] = df["elma"].shift(-1)
+print(df)
+print("---------------------------------------------------")
