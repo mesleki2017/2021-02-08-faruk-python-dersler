@@ -2,11 +2,10 @@
 # begendim
 
 from sklearn.pipeline import make_pipeline
-from sklearn.linear_model import LinearRegression, Lasso, BayesianRidge
+from sklearn.linear_model import LinearRegression
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import PolynomialFeatures
-from sklearn import preprocessing, model_selection, svm
 
 # https://matplotlib.org/3.1.1/gallery/style_sheets/ggplot.html
 # https://tonysyu.github.io/raw_content/matplotlib-style-gallery/gallery.html
@@ -42,34 +41,4 @@ yyyyfit = poly_model.predict(xxxfit)
 plt.plot(xxxfit, yyyyfit, color='darkorange')
 
 print("----------------------------------------------------------------")
-plt.show()
-
-
-x_train = np.linspace(0, 10, 1000)
-#x_train = preprocessing.scale(x_train)
-y_train = np.sin(x_train)
-
-xfit = np.linspace(0, 10, 1000)
-
-clf = LinearRegression(fit_intercept=True)
-clf.fit(x_train[:, np.newaxis], y_train)
-
-yfit = clf.predict(xfit[:, np.newaxis])
-plt.plot(xfit, yfit, color='blue')
-
-print("----------------------------------------------------------------")
-plt.show()
-
-x_train = np.linspace(0, 10, 1000)
-y_train = np.sin(x_train)
-
-
-reg = BayesianRidge(tol=1e-6, fit_intercept=False, compute_score=True)
-init = init = [1., 1e-3]
-reg.set_params(alpha_init=init[0], lambda_init=init[1])
-reg.fit(x_train[:, np.newaxis], y_train)
-
-ymean, ystd = reg.predict(xfit[:, np.newaxis], return_std=True)
-
-plt.plot(xfit, ymean, color='green')
 plt.show()

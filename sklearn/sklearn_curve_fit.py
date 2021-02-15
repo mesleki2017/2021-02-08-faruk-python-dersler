@@ -32,7 +32,7 @@ for i, ax in enumerate(axes):
     if i == 0:
         init = [1 / np.var(y_train), 1.]  # Default values
     elif i == 1:
-        init = [1., 1e-3]
+        init = [1., 0.01]
         reg.set_params(alpha_init=init[0], lambda_init=init[1])
     reg.fit(X_train, y_train)
     ymean, ystd = reg.predict(X_test, return_std=True)
