@@ -7,7 +7,7 @@ import matplotlib
 from en_buyuk_sayi1 import en_buyuk_sayiyi_bul
 
 
-liste1 = [38, 2150, 888, 787, 98, 99, 786, 200, 2000]
+# iste1 = [38, 2150, 888, 787, 98, 99, 786, 200, 2000]
 liste2 = random.randint(5000, size=(200))
 
 fig = plt.figure()
@@ -19,15 +19,13 @@ bbb = np.zeros(len(liste2), dtype=int)
 grafik1 = plt.bar(xxx, liste2)
 
 
+# i neden var bilmiyorum i olmadan calismiyor
 def deneme1(i, listegir):
     global aaa
-    global xxx
-    global bbb
     if aaa == 1:
         return
+
     enBuyukSAyi = en_buyuk_sayiyi_bul(listegir, aaa)
-    if enBuyukSAyi[0] == None:
-        print("ok")
 
     aaa = aaa-1
 
