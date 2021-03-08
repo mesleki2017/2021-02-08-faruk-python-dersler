@@ -1,3 +1,10 @@
-for i, b in enumerate(grafik1):
-    print(i)
-    b.set_height(listegir[i])
+from openpyxl import Workbook
+
+workbook = Workbook()
+sheet = workbook.active
+
+sheet.cell(row=1, column=1).value = "cesur"
+# veya
+sheet["A2"] = "bulent"
+
+workbook.save(filename="veriyazdim2.xlsx")
