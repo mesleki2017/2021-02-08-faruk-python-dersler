@@ -1,30 +1,21 @@
-# http://www.math.utah.edu/~pa/math/mandelbrot/mandelbrot.html
-from numpy import linspace, reshape
-from matplotlib import pyplot
+#https://stackoverflow.com/questions/43326680/what-are-the-differences-between-add-axes-and-add-subplot
 
-xmin, xmax = -2.0 ,0.5    # x range
-ymin, ymax = -1.25,1.25   # y range
-nx  , ny   =  300,300   # resolution
-maxiter    =  200          # max iterations
+import matplotlib.pyplot as plt
+import numpy as np
 
-def mandelbrot(z): # computation for one pixel
-  c = z
-  for n in range(maxiter):
-    if abs(z)>2: return n   # divergence test
-    z = z*z + c
-  return maxiter
+# Some example data to display
+x = np.linspace(0, 4 * np.pi, 400)
+y = np.sin(x ** 2)
 
-X = linspace(xmin,xmax,nx) # lists of x and y
-Y = linspace(ymin,ymax,ny) # pixel co-ordinates
+fig = plt.figure()
 
-# main loops
-N = []
-for y in Y:
-  for x in X:
-    z  = complex(x,y)
-    N += [mandelbrot(z)]
 
-N = reshape(N, (nx,ny)) # change to rectangular array
+ax = fig.add_axes([0,0,1,1])
 
-pyplot.imshow(N) # plot the image
-pyplot.show()
+
+
+
+ax.plot(np.sin(x))
+
+
+plt.show()

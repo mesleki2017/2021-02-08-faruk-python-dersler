@@ -1,6 +1,7 @@
 # bu ornek iki kutle arasindaki cekimi newton kutle cekim yasasina gore hesapliyor
 # ve grafik ciziyor
 import matplotlib.pyplot as plt
+import numpy as np
 
 def draw_graph(x, y):
 	plt.plot(x, y, marker='o')
@@ -12,8 +13,8 @@ def draw_graph(x, y):
 def grafik():
 	# 100 den baslayarak 10 de bir nokta olustur 501 e kadar
 	# 100 metrede 150 metrede 200 metrede gibi
-	r = range(100, 501, 10)
-	# F listesini bosal F
+	rrr=np.arange(100, 501, 10)
+	# F listesini bosalt
 	F = []
 	# kutle cekim sabiti, G
 	G = 6.674*(10**-11)
@@ -22,11 +23,11 @@ def grafik():
 	m2 = 1.5
 	# kuvveti hesapla ve  F listesine ekle,
 	# niye liste diyor bilmiyorum
-	for dist in r:
+	for dist in rrr:
 		force = G*(m1*m2)/(dist**2)
 		F.append(force)
 		
-	draw_graph(r, F)
+	draw_graph(rrr, F)
 
 	
 

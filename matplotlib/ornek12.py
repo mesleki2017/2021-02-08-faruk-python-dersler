@@ -4,7 +4,7 @@ import matplotlib.animation as animation
 
 fig = plt.figure()
 
-N = 5
+N = 15
 
 A = np.random.rand(N,N)
 im = plt.imshow(A)

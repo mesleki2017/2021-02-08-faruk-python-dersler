@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-grafik_datam = open('data\data1.txt','r').read()
+grafik_datam = open('matplotlib/data1.txt','r').read()
 
 noktalar = grafik_datam.split('\n')
 #'\n' new line demek veya enter la bir alt satira gecmis olmak demek
