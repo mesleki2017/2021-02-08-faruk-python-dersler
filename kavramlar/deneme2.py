@@ -1,6 +1,9 @@
-import plotly.express as px
-df = px.data.gapminder().query("year == 2007")
-fig = px.scatter_geo(df, locations="iso_alpha",
-                     size="pop",  # size of markers, "pop" is one of the columns of gapminder
-                     )
-fig.show()
+import dis
+
+def test(*xxx, **yyy):
+    print (xxx)
+    print (yyy)
+
+test(1, 2, a=3, b=4)
+
+print(dis.dis(test))
