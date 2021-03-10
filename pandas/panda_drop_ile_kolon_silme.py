@@ -15,8 +15,8 @@ print(df111)
 
 print("------------------------------")
 
-df111 = df111.drop([0, 1])
+df111 = df111.drop("yas", axis=1)
 
 print(df111)
 
-# https://www.w3resource.com/pandas/dataframe/dataframe-drop.php
+# https://stackoverflow.com/questions/13411544/delete-column-from-pandas-dataframe
