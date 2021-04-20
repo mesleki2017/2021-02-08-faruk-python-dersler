@@ -1,3 +1,8 @@
+#https://pypi.org/project/vobject/
+#https://github.com/eventable/vobject
+#https://stackoverflow.com/questions/13552836/creating-a-multiple-phone-vcard-using-vobject
+#https://segno.readthedocs.io/en/stable/comparison-qrcode-libs.html
+
 import pyqrcode
 import vobject
 
