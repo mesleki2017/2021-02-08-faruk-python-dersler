@@ -15,7 +15,7 @@ o.value = vobject.vcard.Name( family='BBBB', given='AAAA' )
 
 o = j.add('tel')
 o.type_param = "cell"
-o.value = '00112233445566
+o.value = '00112233445566'
 
 o=j.add('email')
 o.type_param = 'INTERNET'
