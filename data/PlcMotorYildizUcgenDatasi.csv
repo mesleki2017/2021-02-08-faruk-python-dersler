@@ -1,4 +1,4 @@
-;start;stop;termik1Motor;termik2Motor;motor1anaKontaktör;motor1yildizKontaktor;motor1ucgenKontaktor;motor2anaKontaktör;motor2yildizKontaktor;motor2ucgenKontaktor;sistemHazyrLambasy;motor1yildizUcgenGecisZaman;motor2yildizUcgenGecisZaman
+;start;stop;termik1Motor;termik2Motor;motor1anaKontaktor;motor1yildizKontaktor;motor1ucgenKontaktor;motor2anaKontaktor;motor2yildizKontaktor;motor2ucgenKontaktor;sistemHazyrLambasy;motor1yildizUcgenGecisZaman;motor2yildizUcgenGecisZaman
 zaman;M0.0;M0.1;M0.2;M0.3;Q0.0;Q0.1;Q0.2;Q0.3;Q0.4;Q0.5;Q0.6;MD100;MD104
 10:09:54.463;0;0;0;0;0;0;0;0;0;0;0;0;0
 10:09:54.630;0;0;0;0;0;0;0;0;0;0;0;0;0
