@@ -7,7 +7,7 @@ from sklearn.metrics import accuracy_score
 import joblib
 import numpy
 
-data = pd.read_csv("file2.csv")
+data = pd.read_csv(r"sklearn\file2.csv")
 
 xxx = data.drop(columns="genlik")
 yyy = data["genlik"]

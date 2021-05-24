@@ -14,7 +14,7 @@ data_frame1 = pd.DataFrame(dict)
 
 
 # daha once egittigimiz model dosyasini cagirma
-model = joblib.load("sinus_egri_makina_ogrenmesi_1.joblib")
+model = joblib.load(r"sklearn\sinus_egri_makina_ogrenmesi_1.joblib")
 
 # model ile tahminde bulunma
 # dataframde ki giris verisi 10 dan buyukse yanlis sonuclar veriyor
