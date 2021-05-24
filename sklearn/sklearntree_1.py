@@ -2,7 +2,7 @@ import pandas as pd
 
 from sklearn.tree import DecisionTreeClassifier
 
-music_data = pd.read_csv("music.csv")
+music_data = pd.read_csv(r"sklearn\music.csv")
 
 
 # print(music_data)

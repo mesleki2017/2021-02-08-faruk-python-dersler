@@ -8,7 +8,7 @@ import joblib
 import numpy
 
 # daha once egittigimiz model dosyasini cagirma
-model = joblib.load("sinus_egri_makina_ogrenmesi_1.joblib")
+model = joblib.load(r"sklearn\sinus_egri_makina_ogrenmesi_1.joblib")
 
 # model ile tahminde bulunma
 prediction = model.predict([[3], [3.1]])

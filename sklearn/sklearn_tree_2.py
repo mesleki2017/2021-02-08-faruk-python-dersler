@@ -5,7 +5,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn import preprocessing
 from sklearn import utils
 
-data = pd.read_csv("file1.csv")
+data = pd.read_csv(r"sklearn\file1.csv")
 
 
 x = data.drop(columns="genlik")

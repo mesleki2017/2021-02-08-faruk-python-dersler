@@ -1,37 +1,29 @@
+import pandas as pd
+from sklearn.tree import DecisionTreeClassifier
+from sklearn import preprocessing
+from sklearn import utils
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+import joblib
+import numpy as np
+import pandas as pd
+
+time = np.arange(4, 8, 0.01)
+dict = {"zaman": time}
+data_frame1 = pd.DataFrame(dict)
 
 
-liste1 = ["G", "L", "G", "L", "G", "L", "G"]
-liste2 = ["G", "L", "L", "G"]
+# daha once egittigimiz model dosyasini cagirma
+model = joblib.load("sinus_egri_makina_ogrenmesi_1.joblib")
 
-liste3 = ["G", "R", "G",    "L", "G", "R",
-          "G", "R", "G",   "G", "R", "G",  "G"]
+# model ile tahminde bulunma
+# dataframde ki giris verisi 10 dan buyukse yanlis sonuclar veriyor
+# cunku modeli egitirken 0 ile 10 arasi datalarla egitim  yapmistik
+prediction = model.predict(data_frame1)
 
+# daha once model kayit sirasinda kayit ettigimiz
+# encoder dosyasini cagirma buarada classes.npy
+lab_enc = preprocessing.LabelEncoder()
+lab_enc.classes_ = np.load('classes.npy')
 
-yon = 0
-yonstep = 90
-x = 0
-y = 0
-
-for komut in liste3:
-    if komut == "R":
-        yon = yon+yonstep
-    if komut == "L":
-        yon = yon-yonstep
-
-    if komut == "G":
-        if yon == 0:
-            x = x+1
-        if yon == 90 or yon == -270:
-            y = y+1
-        if yon == 180 or yon == -180:
-            x = x-1
-        if yon == 270 or yon == -90:
-            y = y-1
-
-
-print(x, y)
-
-if x == 0 and y == 0:
-    print("ok geri donduk")
-else:
-    print("geri donmedi")
+print(lab_enc.inverse_transform((prediction)))
